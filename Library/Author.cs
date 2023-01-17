@@ -11,11 +11,18 @@ namespace Library
         public string Id { get; set; }
         public string FirstName { get; set; }
         public string Surname { get; set; }
-        public string Degree { get; set; }
+        public Degree Degree { get; set; }
         public string Experience { get; set; }
 
-        public string FullName { get { return $"{FirstName} {Surname}"; } }
+        //public string FullName { get { return $"{FirstName} {Surname}"; } }
 
         public List<Book> Books;
+    }
+
+    public enum Degree
+    {
+        None,
+        Master,
+        Phd
     }
 }
