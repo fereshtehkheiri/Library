@@ -27,7 +27,12 @@ namespace Library
             LewiAuthor.Books = LewiBookList;
 
             List<Book> MeganBookList = new List<Book>();
-            MeganBookList.Add(new Book() { Title = "Chemistry", Prescription = "4", ReleaseMonth = "", Price = "1200$" });
+            Book book1 = new Book() { Title = "Chemistry", Prescription = "4", ReleaseMonth = "", Price = "1200$" };
+            BookCategory bookCategory = new BookCategory { Book = book1, Category = CategoryType.Literature };
+            BookCategory bookCategory2 = new BookCategory { Book = book1, Category = CategoryType.Science };
+            book1.BookCategories.Add(bookCategory);
+            book1.BookCategories.Add(bookCategory2);
+            MeganBookList.Add(book1);
             MeganBookList.Add(new Book() { Title = "Astronomy", Prescription = "2", ReleaseMonth = "", Price = "5000$" });
             MeganBookList.Add(new Book() { Title = "Geology", Prescription = "1", ReleaseMonth = "", Price = "3100$" });
 
@@ -61,7 +66,7 @@ namespace Library
         public Book AddBook(string Title, string Prescription)
         {
             Book book = new Book() { Title = Title, Prescription = Prescription };
-            books.Add(book);
+            Books.Add(book);
             return book;
         }
 

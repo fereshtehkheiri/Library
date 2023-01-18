@@ -9,9 +9,10 @@ namespace Library
     public class BookCategory
     {
         public Book Book { get; set; }
-        public Category Category { get; set; }
+        public CategoryType Category { get; set; }
+        //public Category Category { get; set; }
         public int BookId { get; set; }
-        public int CategoryId { get; set; }
+        //public int CategoryId { get; set; }
 
     }
 }

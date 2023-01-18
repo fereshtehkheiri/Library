@@ -15,7 +15,7 @@ namespace Library
     }
     public enum CategoryType
     {
-        Literature, Cultural, Historical, Tutorial, Science, Comedy
+        None,Literature, Cultural, Historical, Tutorial, Science, Comedy
 
     }
 }

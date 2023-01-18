@@ -22,8 +22,7 @@ switch (act)
         Console.WriteLine("FirstName       SurName        Degree");
         foreach (var author in libraryManager.Authors)
         {
-            Console.WriteLine($"{author.FirstName.PadRight(17, ' ')}{author.Surname.PadRight(15, ' ')}{
-                author.Degree.ToString().PadRight(12, ' ')}");
+            Console.WriteLine($"{author}");
         }
         Console.WriteLine("a: Add new author");
         Console.WriteLine("d: Delete author");
@@ -108,20 +107,22 @@ switch (act)
         }
         break;
     case "c":
-        Console.WriteLine("FirstName     SurName      Book's Name    Price     Category");
+        Console.WriteLine("FirstName     SurName      Book's Name    Price     Categories");
 
         foreach (var author in libraryManager.Authors)
         {
             foreach (var book in author.Books)
             {
-                if (author.FirstName == "Megan" || author.FirstName == "Pit")
-                {
-                    Console.WriteLine($"{author.FirstName.PadRight(14, ' ')}{author.Surname.PadRight(13, ' ')}{book.Title.PadRight(15, ' ')}{book.Price.PadRight(10, ' ')}{CategoryType.Science}");
-                }
-                else
-                {
-                    Console.WriteLine($"{author.FirstName.PadRight(14, ' ')}{author.Surname.PadRight(13, ' ')}{book.Title.PadRight(15, ' ')}{book.Price.PadRight(10, ' ')}{CategoryType.Tutorial}");
-                }
+                book.Author = author;
+                Console.WriteLine(book);
+                //if (author.FirstName == "Megan" || author.FirstName == "Pit")
+                //{
+                //    Console.WriteLine($"{author.FirstName.PadRight(14, ' ')}{author.Surname.PadRight(13, ' ')}{book.Title.PadRight(15, ' ')}{book.Price.PadRight(10, ' ')}{CategoryType.Science}");
+                //}
+                //else
+                //{
+                //    Console.WriteLine($"{author.FirstName.PadRight(14, ' ')}{author.Surname.PadRight(13, ' ')}{book.Title.PadRight(15, ' ')}{book.Price.PadRight(10, ' ')}{CategoryType.Tutorial}");
+                //}
             }
         }
         Console.WriteLine("a: Add new book");

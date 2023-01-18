@@ -17,6 +17,11 @@ namespace Library
         //public string FullName { get { return $"{FirstName} {Surname}"; } }
 
         public List<Book> Books;
+
+        public override string ToString()
+        {
+            return $"{this.FirstName.PadRight(17, ' ')}{this.Surname.PadRight(15, ' ')}{this.Degree.ToString().PadRight(12, ' ')}";
+        }
     }
 
     public enum Degree
