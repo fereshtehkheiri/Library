@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Library
@@ -10,12 +11,23 @@ namespace Library
     {
         public List<Author> Authors { get; set; } 
         public List<Book> Books { get; set; } 
+
         public LibraryManager()
         {
 
+            var book = JsonSerializer.Serialize(Books);
+            //string DbPath = Path.Combine(Environment.CurrentDirectory, "posts.json");
+
+            //using (var fs = File.OpenText(DbPath))
+            //{
+
+            //    string content = await fs.ReadToEndAsync();
+            //    var posts = JsonSerializer.Deserialize<List<Author>>(content);
+            //}
+
             Books = new List<Book>();   
             Authors = new List<Author>();
-
+            
 
             List<Book> LewiBookList = new List<Book>()
             {
